@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:method_channel_sample/account_info_widget.dart';
 import 'package:method_channel_sample/battery_level_widget.dart';
 
 void main() {
@@ -31,13 +32,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -47,12 +41,13 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: const Center(
-        child: BatteryLevelWidget(),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            BatteryLevelWidget(),
+            AccountInfoWidget(),
+          ],
+        ),
       ),
     );
   }

@@ -21,7 +21,7 @@ class BatteryLevelWidget extends StatelessWidget {
   Future<void> fetchBatteryLevel(BuildContext context) async {
     String message;
     try {
-      final result = await platform.invokeMethod('getBatteryLevel');
+      final result = await _platform.invokeMethod('getBatteryLevel');
 
       message = 'Battery level at $result % .';
     } on PlatformException catch (e, t) {
@@ -46,4 +46,4 @@ class BatteryLevelWidget extends StatelessWidget {
   }
 }
 
-const platform = MethodChannel('samples.flutter.dev/battery');
+const _platform = MethodChannel('samples.flutter.dev/battery');
