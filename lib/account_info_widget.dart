@@ -27,7 +27,7 @@ class AccountInfoWidget extends StatelessWidget {
     );
   }
 
-  /// バッテリーレベルのを取得します。
+  /// アカウント情報を取得します。
   Future<void> fetchAccount(BuildContext context) async {
     String message;
     try {
@@ -57,6 +57,7 @@ class AccountInfoWidget extends StatelessWidget {
       );
   }
 
+  /// アカウントを選択します。
   Future<void> selectAccount(BuildContext context) async {
     String message = '';
     try {
